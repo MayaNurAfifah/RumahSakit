@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>REGISTRASI</title>
+  </head>
+  
+  <body>
+    <!-- Example Code -->
+      <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <h1>Rumah Sakit XYZ</h1>
+      </div>
+      <div class="row g-3">
+      <div class="col-md-6">
+        <label for="inputnama" class="form-label">Nama</label>
+        <input type="text" class="form-control" id="inputnama" />
+      </div>
+      <div class="col-md-6">
+        <label for="inputnik" class="form-label">NIK</label>
+        <input type="text" class="form-control" id="inputnik" />
+      </div>
+    </div>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label>Tanggal Lahir :</label>
+          <input
+            type="date"
+            name="tanggal_lahir"
+            id="tanggal_lahir"
+            class="tanggal form-control"
+            required
+            placeholder="Tanggal Lahir"/>
+        </div>
+          <div class="col-6">
+          <label for="nama">Jenis Kelamin </label> <br>
+          <input type="radio" id="jeniskelamin" name="jenis" value="L" />
+          <label for="Laki-Laki">Laki-Laki</label> <br>
+          <input type="radio" id="jeniskelamin" name="jenis" value="P" />
+          <label for="Perempuan">Perempuan</label><br />
+        </div>
+      </div>
+      <div class="col-12">
+        <label for="inputalamat" class="form-label">Alamat</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputalamat"
+          placeholder="Alamat"
+        />
+      </div>
+      <div class="col-12">
+            <label for="inputbayar" class="form-label">Pembayaran</label>
+              <select id="inputbayar" class="form-select">
+                <option selected>Pilih Cara Bayar</option>
+                <option>Tanpa Asuransi</option>
+                <option>BPJS/JKN</option>
+                <option>Jasa Rahaja</option>
+              </select>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label>Tanggal Periksa :</label>
+              <input
+                type="date"
+                name="tglperiksa"
+                id="tglperiksa"
+                class="tanggal form-control"
+                required
+                placeholder="Tanggal Periksa"/>
+            </div>
+          </div>
+      <div class="col-md-4">
+        <label for="inputklinik" class="form-label">Klinik Tujuan</label>
+        <select id="inputklinik" class="form-select">
+          <option selected>Pilih...</option>
+          <option selected="">Poliklinik Penyakit Dalam</option>
+          <option>Poliklinik Bedah Umum</option>
+          <option>Poliklinik Anak</option>
+          <option>Poliklinik Kandungan Dan Kebidanan</option>
+          <option>Poliklinik THT</option>
+          <option>Poliklinik Mata</option>
+          <option>Poliklinik Syaraf</option>
+          <option>Poliklinik Gigi</option>
+          <option>Klinik Kesehatan Jiwa / Psikiatri</option>
+          <option>Klinik Gizi</option>
+          <option>Klinik VCT</option>
+          <option>Klinik DOTS TB</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="nomertelp" class="form-label">No. Telp</label>
+        <input type="nomertelp" class="form-control" id="nomertelp" />
+      </div>
+      <div class="col-12">
+        <input type="submit" value="Cetak" class="btn btn-primary" onclick="formulir()"></a>
+      </div>
+    <!-- End Example Code -->
+   
+    <h1>Cetak Kartu Formulir</h1>
+      <table class="table table-bordered">
+      <tr>
+        <td>Nama</td>
+        <td><input type="text" id="nama" class="form-control" readonly ></td>
+      </tr>
+      <tr>
+        <td>NIK</td>
+        <td> <input type="text" id="_nik" class="form-control" readonly ></td>
+      </tr>
+      <tr>
+        <td>Tanggal Lahir</td>
+        <td><input type="text" id="tgl" class="form-control" readonly ></td>
+      </tr>
+      <tr>
+        <td>Jenis Kelamin</td>
+        <td><input type="text" id="jk" class="form-control" readonly ></td>
+      </tr>
+      <tr>
+        <td>Nomer Peserta</td>
+        <td>22-0132-442-0023</td>
+      </tr>
+      <tr>
+        <td>Alamat</td>
+        <td><input type="text" id="alamat" class="form-control" readonly ></td>
+      </tr>
+      <tr>
+        <td>Tanggal Pendaftaran</td>
+        <td>3 februari 2022</td>
+      </tr>
+      <tr>
+            <td>Pembayaran</td>
+            <td><input type="text" id="pb" class="form-control" readonly ></td>
+      </tr>
+      <tr>
+            <td>Tanggal Periksa</td>
+            <td><input type="text" id="tp" class="form-control" readonly ></td>
+      </tr>
+      <tr>
+            <td>Klinik Tujuan</td>
+            <td><input type="text" id="klinik" class="form-control" readonly ></td>
+      </tr>
+      <tr>
+            <td>No. Telp</td>
+            <td><input type="text" id="telp" class="form-control" readonly ></td>
+      </tr>
+      </table>
+      <script>
+            function formulir(){
+                  var nama = document.getElementById("inputnama").value;
+                  var nik = document.getElementById("inputnik").value;
+                  var tgl = document.getElementById("tanggal_lahir").value;
+                  var jk = document.getElementById("jeniskelamin").value;
+                  var alamat = document.getElementById("inputalamat").value;
+                  var pb = document.getElementById("inputbayar").value;
+                  var asal = document.getElementById("tglperiksa").value;
+                  var klinik = document.getElementById("inputklinik").value;
+                  var telp = document.getElementById("nomertelp").value;
+                  
+                  document.getElementById("nama").value = nama;
+                  document.getElementById("_nik").value= nik;
+                  document.getElementById("tgl").value= tgl;
+                  document.getElementById("jk").value = jk;
+                  document.getElementById("alamat").value = alamat;
+                  document.getElementById("pb").value = pb;
+                  document.getElementById("tp").value=tp;
+                  document.getElementById("klinik").value = klinik;
+                  document.getElementById("telp").value =telp;
+            }
+      </script>
+  </body>
+</html>
